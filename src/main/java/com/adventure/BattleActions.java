@@ -5,7 +5,7 @@ import java.util.Random;
 public class BattleActions {
 
     public boolean monsterAttack(Hero hero, Monster monster) {
-        boolean battleStatus;
+//        boolean isHeroAlive;
         Random random = new Random();
         int typeOfAttack = random.nextInt(3) + 1;
         if (typeOfAttack == 1 && monster.getMonsterMp() > 0) {         //monster magic attack
@@ -37,17 +37,11 @@ public class BattleActions {
                 System.out.println(monster.getMonsterName() + " Regular Attack Missed!" + "\n");
             }
         }
-        if (hero.getHeroHp() < 1) {
-            battleStatus = false;
-            System.out.println("You died.  Game over." + "\n");
-        } else {
-            battleStatus = true;
-        }
-        return battleStatus;
+        return hero.isHeroAlive(hero);
     }
 
     public boolean heroRegularAttack(Hero hero, Monster monster) {
-        boolean battleStatus;
+        boolean isMonsterAlive;
         Random random = new Random();
         double heroAttackModifier = (random.nextInt(4) + 7) * .1;
         double heroAttack = heroAttackModifier * hero.getHeroRegularAttack();
@@ -62,16 +56,16 @@ public class BattleActions {
             System.out.println("Your Regular Attack Missed!" + "\n");
         }
         if (monster.getMonsterHp() < 1) {
-            battleStatus = false;
+            isMonsterAlive = false;
             System.out.println(monster.getMonsterName() + " is Dead!" + "\n");
         } else {
-            battleStatus = true;
+            isMonsterAlive = true;
         }
-        return battleStatus;
+        return isMonsterAlive;
     }
 
     public boolean heroMagicAttack(Hero hero, Monster monster) {
-        boolean battleStatus;
+        boolean isMonsterAlive;
         Random random = new Random();
         double heroAttackModifier = (random.nextInt(4) + 7) * .1;
         double heroAttack = heroAttackModifier * hero.getHeroMagicAttack();
@@ -87,11 +81,11 @@ public class BattleActions {
             System.out.println("Your Magic Attack Missed!" + "\n");
         }
         if (monster.getMonsterHp() < 1) {
-            battleStatus = false;
+            isMonsterAlive = false;
             System.out.println(monster.getMonsterName() + " is Dead!" + "\n");
         } else {
-            battleStatus = true;
+            isMonsterAlive = true;
         }
-        return battleStatus;
+        return isMonsterAlive;
     }
 }

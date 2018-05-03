@@ -27,7 +27,7 @@ public class Monster {
         }
     }
 
-    public void monsterStatus() {
+    public void printMonsterStatus() {
         System.out.println(this.monsterName + " -- Status");
         System.out.println("Hp:  " + this.monsterHp);
         System.out.println("Mp:  " + this.monsterMp + "\n");

@@ -1,5 +1,8 @@
 package com.adventure;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Hero {
 
     private String heroName;
@@ -13,11 +16,19 @@ public class Hero {
     private int heroDefense;
     private int potionSupply;
     private int etherSupply;
+    private int gameProgress;
+    private int intialHeroInventorySize = 10;
+    private ArrayList<String> heroItemsInventory = new ArrayList<String>(intialHeroInventorySize);
 
 
-    public Hero(int heroLevel, int heroExperiencePoints, int heroGold, int heroHp, int heroMp,
+
+    public Hero(int gameProgress, int heroLevel, int heroExperiencePoints, int heroGold, int heroHp, int heroMp,
                 int heroRegularAttack, int heroMagicAttack, int heroDefense, int potion, int ether) {
 
+        Scanner reader1 = new Scanner(System.in);
+        System.out.println("What is your name?");
+        this.gameProgress = gameProgress;
+        this.heroName = reader1.next();
         this.heroLevel = heroLevel;
         this.heroExperiencePoints = heroExperiencePoints;
         this.heroGold = heroGold;
@@ -28,9 +39,29 @@ public class Hero {
         this.heroDefense = heroDefense;
         this.potionSupply = potion;
         this.etherSupply = ether;
+
+
+
     }
 
-    public void getHeroStatus() {
+    public void addItemToHeroInventory(Hero hero, String inventoryItem ){
+
+        if (inventoryItem == "potion") {
+            this.potionSupply = potionSupply++;
+        } else {
+            if (inventoryItem == "ether") {
+                this.etherSupply = etherSupply++;
+            } else {
+                if (heroItemsInventory.size() <= intialHeroInventorySize){
+                heroItemsInventory.add(inventoryItem);
+            } else {
+                    //menu for item removal
+                }
+            }
+        }
+    }
+
+    public void printHeroStatus() {
         System.out.println(this.heroName + " -- Status");
         System.out.println("Level:  " + this.heroLevel);
         System.out.println("Experience:  " + this.heroExperiencePoints + "/100");
@@ -42,6 +73,24 @@ public class Hero {
         System.out.println("Defense:  " + this.heroDefense);
         System.out.println("Potion:  " + this.potionSupply);
         System.out.println("Ether:  " + this.etherSupply + "\n");
+    }
+
+    public boolean isHeroAlive(Hero hero) {
+        boolean isHeroAlive = true;
+        if (hero.getHeroHp() < 1) {
+            isHeroAlive = false;
+            System.out.println("You died.");
+        }
+        return isHeroAlive;
+    }
+
+    public int doesHeroHaveMp(Hero hero, int userEnteredBattleMenuChoice){
+
+        if  (hero.getHeroMp() < 1 && userEnteredBattleMenuChoice == 2){
+            System.out.println("You do not have any Mp.  You cannot use a magic attack.");
+            userEnteredBattleMenuChoice = 0;
+        }
+        return userEnteredBattleMenuChoice;
     }
 
     public String getHeroName() {
@@ -130,6 +179,14 @@ public class Hero {
 
     public void setEtherSupply(int etherSupply) {
         this.etherSupply = etherSupply;
+    }
+
+    public int getGameProgress() {
+        return gameProgress;
+    }
+
+    public void setGameProgress(int gameProgress) {
+        this.gameProgress = gameProgress;
     }
 }
 
