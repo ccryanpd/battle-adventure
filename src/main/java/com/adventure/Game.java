@@ -1,47 +1,47 @@
 package com.adventure;
 
-import java.util.ArrayList;
-
 public class Game {
 
-    private boolean isGameRunning = true;
-    private int userEnteredMainMenuValue = 0;
+    private Hero hero;
+    private GameTextOutput gameTextOutput;
+    private boolean isGameRunning;
 
+    public Game () {
+        this.isGameRunning = true;
+        this.hero = new Hero();
+        this.gameTextOutput = new GameTextOutput();
+    }
 
     public void gameEngine() throws InterruptedException{
 
-        Hero hero = new Hero(1, 1, 0, 0, 10, 5, 5, 5, 5, 0,  0);
-
-
-
-        Story story = new Story();
-        story.beginningNarrative(hero);
+        gameTextOutput.beginningNarrative(hero);
         while (isGameRunning) {
 
-            GameMenus gameMenu = new GameMenus();
-            userEnteredMainMenuValue = gameMenu.runMainMenu(hero);
+            GameMenus gameMenu = new GameMenus(6);
+            int userEnteredMainMenuValue = gameMenu.runMainMenu(hero);
 
             switch (userEnteredMainMenuValue) {
 
                 case 1:
+                    gameMenu = new GameMenus(6);
                     gameMenu.runQuestMenu(hero);
-                    userEnteredMainMenuValue = 0;
-                    isGameRunning = hero.isHeroAlive(hero);
+                    isGameRunning = (hero.getHeroHp() > 0);
                     break;
 
                 case 2:
+                    gameMenu = new GameMenus(6);
                     gameMenu.runCastleMenu(hero);
-                    userEnteredMainMenuValue = 0;
-
                     break;
+
                 case 3:
                     hero.printHeroStatus();
-                    userEnteredMainMenuValue = 0;
-
                     break;
+
                 case 4:
-
+                    InventoryItems inventoryItems = new InventoryItems();
+                    inventoryItems.printHeroInventory(hero);
                     break;
+
                 case 5:
 
                     break;
@@ -50,11 +50,7 @@ public class Game {
                     break;
             }
         }
+        gameTextOutput.thankYou();
     }
-
-
-
-
-
 }
 

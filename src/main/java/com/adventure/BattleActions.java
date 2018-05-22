@@ -3,89 +3,91 @@ package com.adventure;
 import java.util.Random;
 
 public class BattleActions {
+    private double attackModifier;
+    private double defenseModifier;
+    private GameTextOutput gameTextOutput = new GameTextOutput();
 
-    public boolean monsterAttack(Hero hero, Monster monster) {
-//        boolean isHeroAlive;
-        Random random = new Random();
-        int typeOfAttack = random.nextInt(3) + 1;
-        if (typeOfAttack == 1 && monster.getMonsterMp() > 0) {         //monster magic attack
-            double monsterAttackModifier = (random.nextInt(4) + 7) * .1;
-            double monsterAttack = monsterAttackModifier * monster.getMonsterMagicAttack();
-            double heroDefenseModifier = (random.nextInt(3) + 8) * .1;
-            double heroDefense = heroDefenseModifier * hero.getHeroDefense();
-            int result = (int) monsterAttack - (int) heroDefense;
+    private void determineBattleModifiers() {
+        double multiplyByPointOne = .1;
+        this.attackModifier = getRandomNumberBetweenSevenAnd(4) * multiplyByPointOne;
+        this.defenseModifier = getRandomNumberBetweenEightAnd(3) * multiplyByPointOne;
+    }
+
+    public boolean monsterAttack(Hero hero, Monster monster) throws InterruptedException{
+        determineBattleModifiers();
+        int isMonsterAttackMagic = getRandomNumberBetweenOneAnd(3);
+        if (isMonsterAttackMagic == 1 && monster.getMonsterMp() > 0) {      // 1 = monster magic attack -- 2 or 3 = monster regular attack
             monster.setMonsterMp(monster.getMonsterMp() - 1);
+            double monsterAttack = attackModifier * monster.getMonsterMagicAttack();
+            double heroDefense = defenseModifier * hero.getHeroDefense();
+            monsterAttackResult(monster, hero, monsterAttack, heroDefense, isMonsterAttackMagic);
 
-            if (result > 0) {
-                int finalResult = hero.getHeroHp() - result;
-                hero.setHeroHp(finalResult);
-                System.out.println(monster.getMonsterName() + " used a magic attack. Your Hp was reduced by " + result + "\n");
-            } else {
-                System.out.println(monster.getMonsterName() + " Magic Attack Missed!" + "\n");
-            }
         } else {
-            double monsterAttackModifier = (random.nextInt(4) + 7) * .1;
-            double monsterAttack = monsterAttackModifier * monster.getMonsterRegularAttack();
-            double heroDefenseModifier = (random.nextInt(3) + 8) * .1;
-            double heroDefense = heroDefenseModifier * hero.getHeroDefense();
-            int result = (int) monsterAttack - (int) heroDefense;
-            if (result > 0) {
-                int finalResult = hero.getHeroHp() - result;
-                hero.setHeroHp(finalResult);
-                System.out.println(monster.getMonsterName() + " punched you in the face. Your Hp was reduced by " + result + "\n");
-            } else {
-                System.out.println(monster.getMonsterName() + " Regular Attack Missed!" + "\n");
-            }
+            double monsterAttack = attackModifier * monster.getMonsterRegularAttack();
+            double heroDefense = defenseModifier * hero.getHeroDefense();
+            monsterAttackResult(monster, hero, monsterAttack, heroDefense, isMonsterAttackMagic);
         }
         return hero.isHeroAlive(hero);
     }
 
-    public boolean heroRegularAttack(Hero hero, Monster monster) {
-        boolean isMonsterAlive;
-        Random random = new Random();
-        double heroAttackModifier = (random.nextInt(4) + 7) * .1;
-        double heroAttack = heroAttackModifier * hero.getHeroRegularAttack();
-        double monsterDefenseModifier = (random.nextInt(3) + 8) * .1;
-        double monsterDefense = monsterDefenseModifier * monster.getMonsterDefense();
-        int result = (int) heroAttack - (int) monsterDefense;
-        if (result > 0) {
-            int finalResult = monster.getMonsterHp() - result;
-            monster.setMonsterHp(finalResult);
-            System.out.println(hero.getHeroName() + " kicked " + monster.getMonsterName() + " in the stones. Hp reduced by " + result + "\n");
-        } else {
-            System.out.println("Your Regular Attack Missed!" + "\n");
-        }
-        if (monster.getMonsterHp() < 1) {
-            isMonsterAlive = false;
-            System.out.println(monster.getMonsterName() + " is Dead!" + "\n");
-        } else {
-            isMonsterAlive = true;
-        }
-        return isMonsterAlive;
+    public boolean heroRegularAttack(Hero hero, Monster monster) throws InterruptedException {
+        determineBattleModifiers();
+        String typeOfAttack = "Regular";
+        double heroAttack = attackModifier * hero.getHeroRegularAttack();
+        double monsterDefense = defenseModifier * monster.getMonsterDefense();
+        heroAttackResult(hero, monster, heroAttack, monsterDefense, typeOfAttack);
+        return monster.CheckIsMonsterAlive(monster);
     }
 
-    public boolean heroMagicAttack(Hero hero, Monster monster) {
-        boolean isMonsterAlive;
-        Random random = new Random();
-        double heroAttackModifier = (random.nextInt(4) + 7) * .1;
-        double heroAttack = heroAttackModifier * hero.getHeroMagicAttack();
-        double monsterDefenseModifier = (random.nextInt(3) + 8) * .1;
-        double monsterDefense = monsterDefenseModifier * monster.getMonsterDefense();
-        int result = (int) heroAttack - (int) monsterDefense;
+    public boolean heroMagicAttack(Hero hero, Monster monster) throws InterruptedException {
+        determineBattleModifiers();
+        String typeOfAttack = "Magic";
+        double heroAttack = attackModifier * hero.getHeroMagicAttack();
+        double monsterDefense = defenseModifier * monster.getMonsterDefense();
         hero.setHeroMp(hero.getHeroMp() - 1);
+        heroAttackResult(hero, monster, heroAttack, monsterDefense, typeOfAttack);
+        return monster.CheckIsMonsterAlive(monster);
+    }
+
+    private int getRandomNumberBetweenSevenAnd ( int bound){
+        return new Random().nextInt(bound) + 7;
+    }
+
+    private int getRandomNumberBetweenEightAnd ( int bound){
+        return new Random().nextInt(bound) + 8;
+    }
+
+    private int getRandomNumberBetweenOneAnd ( int bound){
+        return new Random().nextInt(bound) + 1;
+    }
+
+    private void monsterAttackResult (Monster monster, Hero hero, double monsterAttack, double heroDefense, int typeOfAttack) throws InterruptedException {
+        String attackType;
+        if (typeOfAttack == 1) {
+            attackType = "Magic";
+        } else {
+            attackType = "Regular";
+        }
+        int result = (int) monsterAttack - (int) heroDefense;
+        gameTextOutput.monsterIsAttacking(monster);
+        if (result > 0) {
+            int finalResult = hero.getHeroHp() - result;
+            hero.setHeroHp(finalResult);
+            gameTextOutput.monsterAttack(monster, attackType, result);
+        } else {
+            gameTextOutput.monsterAttackMissed(monster, attackType);
+        }
+    }
+
+    private void heroAttackResult (Hero hero, Monster monster, double heroAttack, double monsterDefense, String typeOfAttack) throws InterruptedException{
+        int result = (int) heroAttack - (int) monsterDefense;
+        gameTextOutput.heroIsAttacking(hero);
         if (result > 0) {
             int finalResult = monster.getMonsterHp() - result;
             monster.setMonsterHp(finalResult);
-            System.out.println(hero.getHeroName() + " uses magic. " + monster.getMonsterName() + " Hp is reduced by " + result + "\n");
+            gameTextOutput.heroAttack(hero, monster, typeOfAttack, result);
         } else {
-            System.out.println("Your Magic Attack Missed!" + "\n");
+            gameTextOutput.heroAttackMissed(monster, typeOfAttack);
         }
-        if (monster.getMonsterHp() < 1) {
-            isMonsterAlive = false;
-            System.out.println(monster.getMonsterName() + " is Dead!" + "\n");
-        } else {
-            isMonsterAlive = true;
-        }
-        return isMonsterAlive;
     }
 }

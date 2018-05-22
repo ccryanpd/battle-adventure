@@ -2,6 +2,7 @@ package com.adventure;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Hero {
 
@@ -17,34 +18,29 @@ public class Hero {
     private int potionSupply;
     private int etherSupply;
     private int gameProgress;
-    private int intialHeroInventorySize = 10;
-    private ArrayList<String> heroItemsInventory = new ArrayList<String>(intialHeroInventorySize);
+    private int initialHeroInventorySize = 10;
+    private ArrayList<String> heroItemsInventory;
 
-
-
-    public Hero(int gameProgress, int heroLevel, int heroExperiencePoints, int heroGold, int heroHp, int heroMp,
-                int heroRegularAttack, int heroMagicAttack, int heroDefense, int potion, int ether) {
+    public Hero() {
 
         Scanner reader1 = new Scanner(System.in);
         System.out.println("What is your name?");
-        this.gameProgress = gameProgress;
+        this.gameProgress = 1;
         this.heroName = reader1.next();
-        this.heroLevel = heroLevel;
-        this.heroExperiencePoints = heroExperiencePoints;
-        this.heroGold = heroGold;
-        this.heroHp = heroHp;
-        this.heroMp = heroMp;
-        this.heroRegularAttack = heroRegularAttack;
-        this.heroMagicAttack = heroMagicAttack;
-        this.heroDefense = heroDefense;
-        this.potionSupply = potion;
-        this.etherSupply = ether;
-
-
-
+        this.heroLevel = 1;
+        this.heroExperiencePoints = 0;
+        this.heroGold = 0;
+        this.heroHp = 10;
+        this.heroMp = 5;
+        this.heroRegularAttack = 5;
+        this.heroMagicAttack = 5;
+        this.heroDefense = 5;
+        this.potionSupply = 0;
+        this.etherSupply = 0;
+        this.heroItemsInventory = new ArrayList<>(initialHeroInventorySize);
     }
 
-    public void addItemToHeroInventory(Hero hero, String inventoryItem ){
+    public void addItemToHeroInventory(Hero hero, String inventoryItem ) throws InterruptedException{
 
         if (inventoryItem == "potion") {
             this.potionSupply = potionSupply++;
@@ -52,27 +48,46 @@ public class Hero {
             if (inventoryItem == "ether") {
                 this.etherSupply = etherSupply++;
             } else {
-                if (heroItemsInventory.size() <= intialHeroInventorySize){
+                if (heroItemsInventory.size() <= initialHeroInventorySize){
                 heroItemsInventory.add(inventoryItem);
+                System.out.println(inventoryItem + " -- added to inventory." + "\n");
+                TimeUnit.MILLISECONDS.sleep(500);
             } else {
-                    //menu for item removal
+                    GameMenus gameMenus = new GameMenus(2);
+                    int userDropItemChoice = gameMenus.runDropItemMenu(hero, inventoryItem);
+                    if (userDropItemChoice == 1) {
+
+                    }
                 }
             }
         }
     }
 
-    public void printHeroStatus() {
-        System.out.println(this.heroName + " -- Status");
+    public void removeItemFromHeroInventory(Hero hero, String inventoryItem) {
+
+
+
+    }
+
+    public void printHeroStatus() throws InterruptedException {
+        System.out.println("------------------------------HERO STATUS------------------------------" + "\n");
+        TimeUnit.MILLISECONDS.sleep(500);
         System.out.println("Level:  " + this.heroLevel);
+        TimeUnit.MILLISECONDS.sleep(500);
         System.out.println("Experience:  " + this.heroExperiencePoints + "/100");
+        TimeUnit.MILLISECONDS.sleep(500);
         System.out.println("Gold:  " + this.heroGold);
+        TimeUnit.MILLISECONDS.sleep(500);
         System.out.println("Hp:  " + this.heroHp);
+        TimeUnit.MILLISECONDS.sleep(500);
         System.out.println("Mp:  " + this.heroMp);
+        TimeUnit.MILLISECONDS.sleep(500);
         System.out.println("Regular Attack:  " + this.heroRegularAttack);
+        TimeUnit.MILLISECONDS.sleep(500);
         System.out.println("Magic Attack:  " + this.heroMagicAttack);
-        System.out.println("Defense:  " + this.heroDefense);
-        System.out.println("Potion:  " + this.potionSupply);
-        System.out.println("Ether:  " + this.etherSupply + "\n");
+        TimeUnit.MILLISECONDS.sleep(500);
+        System.out.println("Defense:  " + this.heroDefense + "\n");
+        TimeUnit.MILLISECONDS.sleep(500);
     }
 
     public boolean isHeroAlive(Hero hero) {
@@ -187,6 +202,22 @@ public class Hero {
 
     public void setGameProgress(int gameProgress) {
         this.gameProgress = gameProgress;
+    }
+
+    public int getInitialHeroInventorySize() {
+        return initialHeroInventorySize;
+    }
+
+    public void setInitialHeroInventorySize(int initialHeroInventorySize) {
+        this.initialHeroInventorySize = initialHeroInventorySize;
+    }
+
+    public ArrayList<String> getHeroItemsInventory() {
+        return heroItemsInventory;
+    }
+
+    public void setHeroItemsInventory(ArrayList<String> heroItemsInventory) {
+        this.heroItemsInventory = heroItemsInventory;
     }
 }
 

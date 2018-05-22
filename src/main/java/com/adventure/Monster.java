@@ -28,12 +28,24 @@ public class Monster {
     }
 
     public void printMonsterStatus() {
+        System.out.println("------------------------------MONSTER STATUS------------------------------" + "\n");
         System.out.println(this.monsterName + " -- Status");
         System.out.println("Hp:  " + this.monsterHp);
         System.out.println("Mp:  " + this.monsterMp + "\n");
         //    System.out.println("Regular Attack:  " + this.monsterRegularAttack);
         //    System.out.println("Magic Attack:  " + this.monsterRegularAttack);
         //    System.out.println("Defense:  " + this.monsterDefense + "\n");
+    }
+
+    public boolean CheckIsMonsterAlive(Monster monster) {
+        boolean isMonsterAlive;
+        if (monster.getMonsterHp() < 1) {
+            isMonsterAlive = false;
+            System.out.println(monster.getMonsterName() + " is Dead!" + "\n");
+        } else {
+            isMonsterAlive = true;
+        }
+        return isMonsterAlive;
     }
 
     public String getMonsterName() {
