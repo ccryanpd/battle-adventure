@@ -7,20 +7,22 @@ public class BattleFramework {
     private Hero hero;
     private Monster monster;
     private boolean isHeroAndMonsterAlive;
-    BattleActions battleActions = new BattleActions();
-    GameTextOutput gameTextOutput = new GameTextOutput();
+    private BattleActions battleActions = new BattleActions(this.gameText);
+    private GameText gameText;
 
-    public BattleFramework(Hero hero, Monster monster) {
+    public BattleFramework(Hero hero, Monster monster, GameText gameText) {
         this.hero = hero;
         this.monster = monster;
         this.isHeroAndMonsterAlive = true;
+        this.gameText = gameText;
+
     }
 
     public void run() throws InterruptedException {
 
         int userEnteredBattleMenuChoice = 0;
         if (isPreemptiveAttack()) {
-            gameTextOutput.monsterPreemptive();
+            gameText.monsterPreemptive();
             this.isHeroAndMonsterAlive = battleActions.monsterAttack(hero, monster);
         }
 
@@ -31,7 +33,7 @@ public class BattleFramework {
                 while ((userEnteredBattleMenuChoice < 1 || userEnteredBattleMenuChoice > 3) && (isHeroAndMonsterAlive = true)) {
                     hero.printHeroStatus();
                     monster.printMonsterStatus();
-                    GameMenus gameMenus = new GameMenus(3);
+                    GameMenus gameMenus = new GameMenus(3, gameText);
                     userEnteredBattleMenuChoice = gameMenus.runBattleMenu(hero);
                 }
 

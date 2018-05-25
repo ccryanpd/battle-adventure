@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Start-Class: com.adventure.MainApplication
+Start-Class: com.adventure.Main
 Main-Class: org.springframework.boot.loader.JarLauncher
 

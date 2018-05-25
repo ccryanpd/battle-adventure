@@ -20,12 +20,15 @@ public class Hero {
     private int gameProgress;
     private int initialHeroInventorySize = 10;
     private ArrayList<String> heroItemsInventory;
+    private ArrayList<InventoryItem> inventoryItems = new ArrayList<>();
+    private GameText gameText;
 
-    public Hero() {
+    public Hero(GameText gameText) {
 
         Scanner reader1 = new Scanner(System.in);
         System.out.println("What is your name?");
         this.gameProgress = 1;
+        this.gameText = gameText;
         this.heroName = reader1.next();
         this.heroLevel = 1;
         this.heroExperiencePoints = 0;
@@ -38,6 +41,14 @@ public class Hero {
         this.potionSupply = 0;
         this.etherSupply = 0;
         this.heroItemsInventory = new ArrayList<>(initialHeroInventorySize);
+    }
+
+    public int getHeroHpValue(){
+        int inventtoryHp = 0;
+        for (InventoryItem inventoryItem : inventoryItems) {
+            inventtoryHp += inventoryItem.getHitpointModifier();
+        }
+        return inventtoryHp + heroHp;
     }
 
     public void addItemToHeroInventory(Hero hero, String inventoryItem ) throws InterruptedException{
@@ -53,7 +64,7 @@ public class Hero {
                 System.out.println(inventoryItem + " -- added to inventory." + "\n");
                 TimeUnit.MILLISECONDS.sleep(500);
             } else {
-                    GameMenus gameMenus = new GameMenus(2);
+                    GameMenus gameMenus = new GameMenus(2, gameText);
                     int userDropItemChoice = gameMenus.runDropItemMenu(hero, inventoryItem);
                     if (userDropItemChoice == 1) {
 

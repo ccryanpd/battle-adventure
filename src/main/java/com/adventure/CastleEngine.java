@@ -2,13 +2,18 @@ package com.adventure;
 
 public class CastleEngine {
 
-    GameTextOutput gameTextOutput = new GameTextOutput();
+    private GameText gameText;
+
+
+    public CastleEngine(GameText gameText) {
+        this.gameText = gameText;
+    }
 
     public void goToThroneRoom(Hero hero) throws InterruptedException{
 
         switch (hero.getGameProgress()){
             case 1:
-                gameTextOutput.throneRoomNarrative1(hero);
+                gameText.throneRoomNarrative1(hero);
         }
     }
 }

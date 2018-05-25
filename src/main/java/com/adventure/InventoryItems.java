@@ -5,6 +5,12 @@ import java.util.concurrent.TimeUnit;
 
 public class InventoryItems {
 
+    private GameText gameText;
+
+    public InventoryItems(GameText gameText) {
+        this.gameText = gameText;
+    }
+
     public void printHeroInventory(Hero hero) throws InterruptedException {
         System.out.println("------------------------------INVENTORY------------------------------");
         TimeUnit.MILLISECONDS.sleep(500);

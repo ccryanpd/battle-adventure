@@ -8,7 +8,7 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-mainClassName = 'com.adventure.MainApplication'
+mainClassName = 'com.adventure.Main'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -35,6 +35,7 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("junit:junit")
+
 }
 
 

@@ -12,6 +12,12 @@ public class Monster {
     private int monsterDefense;
     private int monsterMp;
     private int monsterMagicAttack;
+    private GameText gameText;
+
+    public Monster (GameText gameText) {
+        this.gameText = gameText;
+    }
+
 
     public void monsterGenerator(int questNumber) {
         if (questNumber == 1) {

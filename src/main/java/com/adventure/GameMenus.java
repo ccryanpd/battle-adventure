@@ -8,9 +8,11 @@ import java.util.concurrent.TimeUnit;
 public class GameMenus{
 
     private int numberOfMenuOptions;
+    private GameText gameText;
 
-    public GameMenus(int numberOfMenuOptions) {
+    public GameMenus(int numberOfMenuOptions, GameText gameText) {
         this.numberOfMenuOptions = numberOfMenuOptions;
+        this.gameText = gameText;
     }
 
     public int runMainMenu(Hero hero) {
@@ -40,7 +42,7 @@ public class GameMenus{
             System.out.println("Enter the number of your choice.");
             userEnteredMenuValue = userEnterMenuValueAndCheckForException(numberOfMenuOptions);
             if (userEnteredMenuValue != 6) {
-                QuestEngine quest = new QuestEngine();
+                QuestEngine quest = new QuestEngine(gameText);
                 quest.newQuest(userEnteredMenuValue, hero);
             }
         }
@@ -55,7 +57,7 @@ public class GameMenus{
             System.out.println("Enter the number of your choice.");
             userEnteredMenuValue = userEnterMenuValueAndCheckForException(numberOfMenuOptions);
             if (userEnteredMenuValue != 6) {
-                CastleEngine castle = new CastleEngine();
+                CastleEngine castle = new CastleEngine(gameText);
                 castle.goToThroneRoom(hero);
             }
         }
