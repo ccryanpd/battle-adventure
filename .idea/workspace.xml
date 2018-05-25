@@ -1,99 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0083a036-0dec-42b1-b494-c55486fd77da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/InventoryItem.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/Narrator.java" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/annotation-processors.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_2_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_core_1_2_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_classmate_1_3_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_9_5.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_9_5.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_5.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_5.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_5.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_annotation_javax_annotation_api_1_3_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_2_0_1_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_logging_log4j_log4j_api_2_10_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_logging_log4j_log4j_to_slf4j_2_10_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_core_8_5_31.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_el_8_5_31.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_31.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_validator_hibernate_validator_6_0_9_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jul_to_slf4j_1_7_25.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_25.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_2_0_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_autoconfigure_2_0_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_2_0_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_json_2_0_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_logging_2_0_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_tomcat_2_0_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_web_2_0_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_aop_5_0_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_beans_5_0_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_context_5_0_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_core_5_0_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_expression_5_0_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_jcl_5_0_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_web_5_0_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_webmvc_5_0_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_yaml_snakeyaml_1_19.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/BattleActions.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/BattleActions.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/BattleFramework.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/BattleFramework.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/CastleEngine.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/CastleEngine.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/Game.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/Game.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/GameMenus.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/GameMenus.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/GameTextOutput.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/Hero.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/Hero.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/InventoryItems.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/InventoryItems.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/MainApplication.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/Monster.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/Monster.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/adventure/QuestEngine.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/adventure/QuestEngine.class" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/battle-adventure-1.0.tar" afterPath="$PROJECT_DIR$/build/distributions/battle-adventure-1.0.tar" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/battle-adventure-1.0.zip" afterPath="$PROJECT_DIR$/build/distributions/battle-adventure-1.0.zip" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/battle-adventure-boot-1.0.tar" afterPath="$PROJECT_DIR$/build/distributions/battle-adventure-boot-1.0.tar" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/battle-adventure-boot-1.0.zip" afterPath="$PROJECT_DIR$/build/distributions/battle-adventure-boot-1.0.zip" />
-      <change beforePath="$PROJECT_DIR$/build/libs/gs-spring-boot-0.1.0.jar" afterPath="$PROJECT_DIR$/build/libs/gs-spring-boot-0.1.0.jar" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/GameText" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/battle-adventure" afterPath="$PROJECT_DIR$/build/scripts/battle-adventure" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/battle-adventure.bat" afterPath="$PROJECT_DIR$/build/scripts/battle-adventure.bat" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/bootJar/MANIFEST.MF" afterPath="$PROJECT_DIR$/build/tmp/bootJar/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/BattleActions.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/BattleActions.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/BattleFramework.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/BattleFramework.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/CastleEngine.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/CastleEngine.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/Game.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/Game.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/GameMenus.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/GameMenus.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/GameTextOutput.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/Hero.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/Hero.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/InventoryItems.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/InventoryItems.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/Monster.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/Monster.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/adventure/QuestEngine.class" afterPath="$PROJECT_DIR$/out/production/classes/com/adventure/QuestEngine.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/BattleActions.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/BattleActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/BattleFramework.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/BattleFramework.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/CastleEngine.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/CastleEngine.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/Game.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/Game.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/GameMenus.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/GameMenus.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/GameTextOutput.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/GameText.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/Hero.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/Hero.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/InventoryItems.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/InventoryItems.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/MainApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/Monster.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/Monster.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adventure/QuestEngine.java" afterPath="$PROJECT_DIR$/src/main/java/com/adventure/QuestEngine.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GameText" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-    </list>
+    <list default="true" id="0083a036-0dec-42b1-b494-c55486fd77da" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -170,7 +78,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="452">
@@ -180,23 +88,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/Main.java">
+      <file leaf-file-name="SpringApplication.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.0.2.RELEASE/3a8dc0fa9858e8007dcb2e33b0f60241e79d2a45/spring-boot-2.0.2.RELEASE-sources.jar!/org/springframework/boot/SpringApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="315" column="0" lean-forward="false" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/Game.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -214,12 +120,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameText.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameText.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/GameText.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="150">
+              <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -823,7 +731,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
@@ -1105,7 +1013,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1116,12 +1024,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18803419" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13532764" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26022914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18669528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22174536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15379113" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1148,14 +1056,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1547,8 +1447,8 @@
         <state relative-caret-position="210">
           <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding>
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1587,29 +1487,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/Narrator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1629,10 +1511,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/adventure/GameText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.0.2.RELEASE/3a8dc0fa9858e8007dcb2e33b0f60241e79d2a45/spring-boot-2.0.2.RELEASE-sources.jar!/org/springframework/boot/SpringApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="315" column="0" lean-forward="false" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding />
         </state>
       </provider>
