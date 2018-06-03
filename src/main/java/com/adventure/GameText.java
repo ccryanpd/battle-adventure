@@ -1,85 +1,150 @@
 package com.adventure;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class GameText {
 
     @Value("#{'${beginningNarrative}'.split('\\|')}")
-    private List<String> beginningNarrative;
-
-    @Value("${beginningNarrativeLine1}")
-    public String beginningNarrativeLine1;
+    public List<String> beginningNarrative;
 
     @Value("${isAttacking}")
     public String isAttacking;
 
+    @Value("#{'${throneRoomNarrative}'.split('\\|')}")
+    public List<String> throneRoomNarrative;
 
-    private Sleep sleep = new Sleep();
-    public Narrator narrator = new Narrator();
+    @Value("${monsterPreemptiveAttack}")
+    public String monsterPreemptiveAttack;
 
-    public void beginningNarrative(Hero hero) throws InterruptedException, IOException{
-        narrator.storyNarrator(beginningNarrative);
-        hero.addItemToHeroInventory(hero, "GOLDEN KEY");
-    }
+    @Value("${monsterAttack}")
+    public String monsterAttack;
 
-    public void throneRoomNarrative1(Hero hero) throws InterruptedException {
-        System.out.println("------------------------------THE THRONE ROOM------------------------------");
-        TimeUnit.SECONDS.sleep(4);
-        System.out.println("  ");
+    @Value("${monsterAttackMissed}")
+    public String monsterAttackMissed;
 
-    }
+    @Value("${heroAttack}")
+    public String heroAttack;
 
-    public void thankYou() throws InterruptedException {
-        sleep.mediumSleep();
-        System.out.println("Thank you for playing.");
-    }
+    @Value("${heroAttackMissed}")
+    public String heroAttackMissed;
 
-    public void monsterIsAttacking(Monster monster) throws InterruptedException {
-        System.out.println(String.format(isAttacking, monster.getMonsterName()));
-        sleep.attackActionSleep();
-    }
+    @Value("${thankYou}")
+    public String thankYou;
 
-    public void monsterAttack(Monster monster, String attackType, int result) throws InterruptedException {
-        System.out.println("\n" + monster.getMonsterName() + " used a " + attackType + " Attack. Your Hp was reduced by " + result + "\n");
-        sleep.mediumSleep();
-    }
+    @Value("#{'${mainGameMenu}'.split('\\|')}")
+    public List<String> mainGameMenu;
 
-    public void monsterAttackMissed(Monster monster, String attackType) throws InterruptedException {
-        System.out.println(monster.getMonsterName() + " " + attackType + " Attack Missed!" + "\n");
-        sleep.mediumSleep();
-    }
+    @Value("${heroChoice}")
+    public String heroChoice;
 
-    public void heroIsAttacking(Hero hero) throws InterruptedException {
-        System.out.println(String.format(isAttacking, hero.getHeroName()));
-        sleep.attackActionSleep();
-    }
+    @Value("#{'${questMenu}'.split('\\|')}")
+    public List<String> questMenu;
 
-    public void heroAttack(Hero hero, Monster monster, String typeOfAttack, int result) throws InterruptedException {
-        System.out.println("\n" + hero.getHeroName() + " used a " + typeOfAttack + " Attack. " + monster.getMonsterName() + " Hp was reduced by " + result + "\n");
-        sleep.mediumSleep();
-    }
+    @Value("#{'${castleMenu}'.split('\\|')}")
+    public List<String> castleMenu;
 
-    public void heroAttackMissed(Monster monster, String typeOfAttack) throws InterruptedException {
-        System.out.println(typeOfAttack + " Attack Missed!" + "\n");
-        sleep.mediumSleep();
-    }
+    @Value("#{'${battleMenu}'.split('\\|')}")
+    public List<String> battleMenu;
 
-    public void monsterPreemptive() throws InterruptedException {
-        System.out.println("------------------------------MONSTER PREEMPTIVE ATTACK!!------------------------------" + "\n");
-        sleep.mediumSleep();
-    }
+    @Value("#{'${yesOrNo}'.split('\\|')}")
+    public List<String> yesOrNo;
 
+    @Value("${dropItemMenu}")
+    public String dropItemMenu;
 
+    @Value("${notAnInteger}")
+    public String notAnInteger;
 
+    @Value("${tryAgain}")
+    public String tryAgain;
+
+    @Value("${heroName}")
+    public String heroName;
+
+    @Value("${heroStatus}")
+    public String heroStatus;
+
+    @Value("${heroExperience}")
+    public String heroExperience;
+
+    @Value("${heroLevel}")
+    public String heroLevel;
+
+    @Value("${heroGold}")
+    public String heroGold;
+
+    @Value("${heroHp}")
+    public String heroHp;
+
+    @Value("${heroMp}")
+    public String heroMp;
+
+    @Value("${heroRegularAttack}")
+    public String heroRegularAttack;
+
+    @Value("${heroMagicAttack}")
+    public String heroMagicAttack;
+
+    @Value("${heroDefense}")
+    public String heroDefense;
+
+    @Value("${addedtoInventory}")
+    public String addedtoInventory;
+
+    @Value("${youDied}")
+    public String youDied;
+
+    @Value("${noMp}")
+    public String noMp;
+
+    @Value("${inventory}")
+    public String inventory;
+
+    @Value("${heroPotion}")
+    public String heroPotion;
+
+    @Value("${heroEther}")
+    public String heroEther;
+
+    @Value("${inventoryItems}")
+    public String inventoryItems;
+
+    @Value("${monsterStatus}")
+    public String monsterStatus;
+
+    @Value("${monsterName}")
+    public String monsterName;
+
+    @Value("${monsterHp}")
+    public String monsterHp;
+
+    @Value("${monsterMp}")
+    public String monsterMp;
+
+    @Value("${monsterIsDead}")
+    public String monsterIsDead;
+
+    @Value("${battle}")
+    public String battle;
+
+    @Value("${vs}")
+    public String vs;
+
+    @Value("${questCompleted}")
+    public String questCompleted;
+
+    @Value("${seperator}")
+    public String seperator;
+
+    @Value("${dropItemChoice}")
+    public String dropItemChoice;
+
+    @Value("${notInInventory}")
+    public String notInInventory;
 
 
 }

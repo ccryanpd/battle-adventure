@@ -11,19 +11,17 @@ import java.io.IOException;
 public class Main implements CommandLineRunner {
 
     @Autowired
-    private GameText gameText;
+    public Narrator narrator;
 
     public static void main (String[] args) throws InterruptedException {
 
-
         SpringApplication.run(Main.class, args);
-
     }
 
     @Override
     public void run(String... args) throws InterruptedException, IOException, NullPointerException{
 
-        Game game = new Game(gameText);
+        Game game = new Game(narrator);
         game.gameEngine();
 
     }

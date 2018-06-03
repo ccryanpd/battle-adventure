@@ -2,10 +2,10 @@ package com.adventure;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Hero {
 
+    private Narrator narrator;
     private String heroName;
     private int heroLevel;
     private int heroExperiencePoints;
@@ -18,17 +18,17 @@ public class Hero {
     private int potionSupply;
     private int etherSupply;
     private int gameProgress;
-    private int initialHeroInventorySize = 10;
-    private ArrayList<String> heroItemsInventory;
-    private ArrayList<InventoryItem> inventoryItems = new ArrayList<>();
-    private GameText gameText;
+    private int initialHeroInventorySize = 1;
+    private int initialEquippedItemMax = 3;
+    private ArrayList<InventoryItems> inventoryItems;
+    private ArrayList<InventoryItems> equippedItems;
 
-    public Hero(GameText gameText) {
+    public Hero(Narrator narrator) throws InterruptedException {
 
         Scanner reader1 = new Scanner(System.in);
-        System.out.println("What is your name?");
+        narrator.whatIsHeroName();
+        this.narrator = narrator;
         this.gameProgress = 1;
-        this.gameText = gameText;
         this.heroName = reader1.next();
         this.heroLevel = 1;
         this.heroExperiencePoints = 0;
@@ -40,33 +40,36 @@ public class Hero {
         this.heroDefense = 5;
         this.potionSupply = 0;
         this.etherSupply = 0;
-        this.heroItemsInventory = new ArrayList<>(initialHeroInventorySize);
+        this.inventoryItems = new ArrayList<>(initialHeroInventorySize);
+        this.equippedItems = new ArrayList<>(initialEquippedItemMax);
     }
 
-    public int getHeroHpValue(){
-        int inventtoryHp = 0;
-        for (InventoryItem inventoryItem : inventoryItems) {
-            inventtoryHp += inventoryItem.getHitpointModifier();
-        }
-        return inventtoryHp + heroHp;
-    }
+//    public int getHeroHpValue(){
+//        int inventtoryHp = 0;
+//        for (InventoryItem inventoryItem : inventoryItems) {
+//            inventtoryHp += inventoryItem.getHitpointModifier();
+//        }
+//        return inventtoryHp + heroHp;
+//    }
 
-    public void addItemToHeroInventory(Hero hero, String inventoryItem ) throws InterruptedException{
+    public void addItemToHeroInventory(Hero hero, InventoryItems inventoryItem ) throws InterruptedException{
 
-        if (inventoryItem == "potion") {
+        if (inventoryItem.getItemName().equals("potion")) {
             this.potionSupply = potionSupply++;
         } else {
-            if (inventoryItem == "ether") {
+            if (inventoryItem.getItemName().equals("ether")) {
                 this.etherSupply = etherSupply++;
             } else {
-                if (heroItemsInventory.size() <= initialHeroInventorySize){
-                heroItemsInventory.add(inventoryItem);
-                System.out.println(inventoryItem + " -- added to inventory." + "\n");
-                TimeUnit.MILLISECONDS.sleep(500);
-            } else {
-                    GameMenus gameMenus = new GameMenus(2, gameText);
-                    int userDropItemChoice = gameMenus.runDropItemMenu(hero, inventoryItem);
+                if (inventoryItems.size() < initialHeroInventorySize){
+                inventoryItems.add(inventoryItem);
+                narrator.addedtoInventory(inventoryItem.getItemName());
+                } else {
+                    GameMenus gameMenus = new GameMenus(narrator, 2);
+                    int userDropItemChoice = gameMenus.runDropItemMenu(inventoryItem.getItemName(), hero);
                     if (userDropItemChoice == 1) {
+                        InventoryItems itemToRemove = gameMenus.userEnterItemAndCheckForExceptionAndInventory(hero);
+                        System.out.println(itemToRemove.getItemName());
+
 
                     }
                 }
@@ -80,40 +83,19 @@ public class Hero {
 
     }
 
-    public void printHeroStatus() throws InterruptedException {
-        System.out.println("------------------------------HERO STATUS------------------------------" + "\n");
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("Level:  " + this.heroLevel);
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("Experience:  " + this.heroExperiencePoints + "/100");
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("Gold:  " + this.heroGold);
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("Hp:  " + this.heroHp);
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("Mp:  " + this.heroMp);
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("Regular Attack:  " + this.heroRegularAttack);
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("Magic Attack:  " + this.heroMagicAttack);
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("Defense:  " + this.heroDefense + "\n");
-        TimeUnit.MILLISECONDS.sleep(500);
-    }
-
-    public boolean isHeroAlive(Hero hero) {
+    public boolean isHeroAlive(Hero hero) throws InterruptedException {
         boolean isHeroAlive = true;
         if (hero.getHeroHp() < 1) {
             isHeroAlive = false;
-            System.out.println("You died.");
+            narrator.youDied();
         }
         return isHeroAlive;
     }
 
-    public int doesHeroHaveMp(Hero hero, int userEnteredBattleMenuChoice){
+    public int doesHeroHaveMp(Hero hero, int userEnteredBattleMenuChoice) throws InterruptedException{
 
         if  (hero.getHeroMp() < 1 && userEnteredBattleMenuChoice == 2){
-            System.out.println("You do not have any Mp.  You cannot use a magic attack.");
+            narrator.noMp();
             userEnteredBattleMenuChoice = 0;
         }
         return userEnteredBattleMenuChoice;
@@ -223,12 +205,12 @@ public class Hero {
         this.initialHeroInventorySize = initialHeroInventorySize;
     }
 
-    public ArrayList<String> getHeroItemsInventory() {
-        return heroItemsInventory;
+    public ArrayList<InventoryItems> getInventoryItems() {
+        return inventoryItems;
     }
 
-    public void setHeroItemsInventory(ArrayList<String> heroItemsInventory) {
-        this.heroItemsInventory = heroItemsInventory;
+    public void setInventoryItems(ArrayList<InventoryItems> inventoryItems) {
+        this.inventoryItems = inventoryItems;
     }
 }
 

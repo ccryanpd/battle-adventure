@@ -5,11 +5,12 @@ import java.util.Random;
 public class BattleActions {
     private double attackModifier;
     private double defenseModifier;
-    private GameText gameText;
+    private Narrator narrator;
 
-    public BattleActions(GameText gameText){
-        this.gameText = gameText;
+    public BattleActions(Narrator narrator) {
+        this.narrator = narrator;
     }
+
 
     private void determineBattleModifiers() {
         double multiplyByPointOne = .1;
@@ -73,25 +74,25 @@ public class BattleActions {
             attackType = "Regular";
         }
         int result = (int) monsterAttack - (int) heroDefense;
-        gameText.monsterIsAttacking(monster);
+        narrator.monsterIsAttacking(monster);
         if (result > 0) {
             int finalResult = hero.getHeroHp() - result;
             hero.setHeroHp(finalResult);
-            gameText.monsterAttack(monster, attackType, result);
+            narrator.monsterAttack(monster, attackType, result);
         } else {
-            gameText.monsterAttackMissed(monster, attackType);
+            narrator.monsterAttackMissed(monster, attackType);
         }
     }
 
     private void heroAttackResult (Hero hero, Monster monster, double heroAttack, double monsterDefense, String typeOfAttack) throws InterruptedException{
         int result = (int) heroAttack - (int) monsterDefense;
-        gameText.heroIsAttacking(hero);
+        narrator.heroIsAttacking(hero);
         if (result > 0) {
             int finalResult = monster.getMonsterHp() - result;
             monster.setMonsterHp(finalResult);
-            gameText.heroAttack(hero, monster, typeOfAttack, result);
+            narrator.heroAttack(hero, monster, typeOfAttack, result);
         } else {
-            gameText.heroAttackMissed(monster, typeOfAttack);
+            narrator.heroAttackMissed(typeOfAttack);
         }
     }
 }

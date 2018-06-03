@@ -1,30 +1,80 @@
 package com.adventure;
 
 
-import java.util.concurrent.TimeUnit;
-
 public class InventoryItems {
+    private String itemName;
+    private int hpModifier;
+    private int mpModifier;
+    private int regularAttackModifier;
+    private int magicAttackModifier;
+    private int defenseModifier;
+    private String itemDescription;
+    private boolean isItemEquippable;
 
-    private GameText gameText;
-
-    public InventoryItems(GameText gameText) {
-        this.gameText = gameText;
+    public InventoryItems(String itemName, int hpModifier, int mpModifier, int regularAttackModifier, int magicAttackModifier, int defenseModifier, String itemDescription, boolean isItemEquippable) {
+        this.itemName = itemName;
+        this.hpModifier = hpModifier;
+        this.mpModifier = mpModifier;
+        this.regularAttackModifier = regularAttackModifier;
+        this.magicAttackModifier = magicAttackModifier;
+        this.defenseModifier = defenseModifier;
+        this.itemDescription = itemDescription;
+        this.isItemEquippable = isItemEquippable;
     }
 
-    public void printHeroInventory(Hero hero) throws InterruptedException {
-        System.out.println("------------------------------INVENTORY------------------------------");
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("You have " + hero.getPotionSupply() + " potions.");
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("You have " + hero.getEtherSupply() + " ether." + "\n");
-        TimeUnit.MILLISECONDS.sleep(500);
-        System.out.println("----------------WEAPONS - ARMOR - MAGIC - OTHER ITEMS----------------");
-        System.out.println(hero.getHeroItemsInventory()+ "\n");
-        TimeUnit.MILLISECONDS.sleep(500);
+    public String getItemDescription() {
+        return itemDescription;
     }
 
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
+    }
 
+    public String getItemName() {
+        return itemName;
+    }
 
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
 
+    public int getHpModifier() {
+        return hpModifier;
+    }
 
+    public void setHpModifier(int hpModifier) {
+        this.hpModifier = hpModifier;
+    }
+
+    public int getMpModifier() {
+        return mpModifier;
+    }
+
+    public void setMpModifier(int mpModifier) {
+        this.mpModifier = mpModifier;
+    }
+
+    public int getRegularAttackModifier() {
+        return regularAttackModifier;
+    }
+
+    public void setRegularAttackModifier(int regularAttackModifier) {
+        this.regularAttackModifier = regularAttackModifier;
+    }
+
+    public int getMagicAttackModifier() {
+        return magicAttackModifier;
+    }
+
+    public void setMagicAttackModifier(int magicAttackModifier) {
+        this.magicAttackModifier = magicAttackModifier;
+    }
+
+    public int getDefenseModifier() {
+        return defenseModifier;
+    }
+
+    public void setDefenseModifier(int defenseModifier) {
+        this.defenseModifier = defenseModifier;
+    }
 }

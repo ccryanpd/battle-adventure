@@ -7,22 +7,23 @@ public class BattleFramework {
     private Hero hero;
     private Monster monster;
     private boolean isHeroAndMonsterAlive;
-    private BattleActions battleActions = new BattleActions(this.gameText);
-    private GameText gameText;
+    private BattleActions battleActions;
 
-    public BattleFramework(Hero hero, Monster monster, GameText gameText) {
+    private Narrator narrator;
+
+    public BattleFramework(Narrator narrator, Hero hero, Monster monster) {
         this.hero = hero;
         this.monster = monster;
         this.isHeroAndMonsterAlive = true;
-        this.gameText = gameText;
-
+        this.narrator = narrator;
+        this.battleActions = new BattleActions(narrator);
     }
 
     public void run() throws InterruptedException {
 
         int userEnteredBattleMenuChoice = 0;
         if (isPreemptiveAttack()) {
-            gameText.monsterPreemptive();
+            narrator.monsterPreemptive();
             this.isHeroAndMonsterAlive = battleActions.monsterAttack(hero, monster);
         }
 
@@ -31,9 +32,9 @@ public class BattleFramework {
             while (isHeroAndMonsterAlive) {
 
                 while ((userEnteredBattleMenuChoice < 1 || userEnteredBattleMenuChoice > 3) && (isHeroAndMonsterAlive = true)) {
-                    hero.printHeroStatus();
-                    monster.printMonsterStatus();
-                    GameMenus gameMenus = new GameMenus(3, gameText);
+                    narrator.printHeroStatus(hero);
+                    narrator.printMonsterStatus(monster);
+                    GameMenus gameMenus = new GameMenus(narrator, 3);
                     userEnteredBattleMenuChoice = gameMenus.runBattleMenu(hero);
                 }
 

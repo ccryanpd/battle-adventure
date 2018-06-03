@@ -13,7 +13,7 @@ public class Sleep {
     }
 
     public void shortSleep() throws InterruptedException {
-        TimeUnit.MILLISECONDS.sleep(300);
+        TimeUnit.MILLISECONDS.sleep(250);
     }
 
     public void mediumSleep() throws InterruptedException {
@@ -21,6 +21,6 @@ public class Sleep {
     }
 
     public void longSleep() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(2);
     }
 }

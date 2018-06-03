@@ -1,50 +1,45 @@
 package com.adventure;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.io.IOException;
 
 public class Game {
 
-
     private Hero hero;
-    private GameText gameText;
     private boolean isGameRunning;
+    private Narrator narrator;
 
-    public Game(GameText gameText) {
+    public Game(Narrator narrator) throws InterruptedException {
         this.isGameRunning = true;
-        this.hero = new Hero(gameText);
-        this.gameText = gameText;
+        this.narrator = narrator;
+        this.hero = new Hero(narrator);
     }
 
     public void gameEngine() throws InterruptedException, IOException, NullPointerException{
-
-        gameText.beginningNarrative(hero);
+        narrator.beginningNarrative(hero);
         while (isGameRunning) {
 
-            GameMenus gameMenu = new GameMenus(6, gameText);
+            GameMenus gameMenu = new GameMenus(narrator, 6);
             int userEnteredMainMenuValue = gameMenu.runMainMenu(hero);
 
             switch (userEnteredMainMenuValue) {
 
                 case 1:
-                    gameMenu = new GameMenus(6, gameText);
+                    gameMenu = new GameMenus(narrator, 6);
                     gameMenu.runQuestMenu(hero);
                     isGameRunning = (hero.getHeroHp() > 0);
                     break;
 
                 case 2:
-                    gameMenu = new GameMenus(6, gameText);
+                    gameMenu = new GameMenus(narrator, 6);
                     gameMenu.runCastleMenu(hero);
                     break;
 
                 case 3:
-                    hero.printHeroStatus();
+                    narrator.printHeroStatus(hero);
                     break;
 
                 case 4:
-                    InventoryItems inventoryItems = new InventoryItems(gameText);
-                    inventoryItems.printHeroInventory(hero);
+                    narrator.printHeroInventory(hero);
                     break;
 
                 case 5:
@@ -55,7 +50,7 @@ public class Game {
                     break;
             }
         }
-        gameText.thankYou();
+        narrator.thankYou();
     }
 }
 
